@@ -1,7 +1,8 @@
 {
-  "solidity.compileUsingRemoteVersion": "v0.8.9+commit.e5eed63a",
+  "solidity.compileUsingRemoteVersion": "v0.4.17+commit.bdeb9e52",
   "cSpell.words": [
     "bytecode",
     "hdwallet"
-  ]
+  ],
+  "prettier.singleQuote": true
 }
