@@ -2,9 +2,7 @@ const assert = require('assert');
 const ganache = require('ganache-cli');
 const Web3 = require('web3');
 const web3 = new Web3(ganache.provider());
-const { interface, bytecode } = require('../compile');
-
-const INITIAL_STRING = 'Hi there';
+const { abi, evm } = require('../compile');
 
 describe('Lottery Contract', () => {
   let accounts;
@@ -15,8 +13,8 @@ describe('Lottery Contract', () => {
     accounts = await web3.eth.getAccounts();
 
     // Use one of those accounts to deploy the contract
-    lottery = await new web3.eth.Contract(JSON.parse(interface))
-      .deploy({ data: bytecode })
+    lottery = await new web3.eth.Contract(abi)
+      .deploy({ data: evm.bytecode.object })
       .send({ from: accounts[0], gas: '1000000' });
   });
 
