@@ -32,7 +32,7 @@ class App extends React.Component {
     event.preventDefault();
     const accounts = await web3.eth.getAccounts();
 
-    this.setState({ message: 'Waiting on transaction success...' });
+    this.setState({ messagve: 'Waiting on transaction success...' });
 
     await lottery.methods.enter().send({
       from: accounts[0],
